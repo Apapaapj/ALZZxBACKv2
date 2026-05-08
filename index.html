@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery ALZZxBACK</title>
+
+  <!-- Font Gothic -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #000000, #111111, #1a1a1a);
+      font-family: 'Cinzel', serif;
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.03), transparent 70%);
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 5px;
+      color: #ffffff;
+      text-shadow: 0 0 15px #5a5a5a;
+      animation: glow 2s infinite alternate;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: #b3b3b3;
+      font-size: 1rem;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #444;
+      }
+      to {
+        text-shadow: 0 0 25px #888;
+      }
+    }
+
+    .gallery {
+      width: 90%;
+      max-width: 1200px;
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.4s ease;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 30px rgba(255,255,255,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      filter: grayscale(20%) brightness(0.8);
+      transition: 0.4s;
+    }
+
+    .card:hover img {
+      filter: grayscale(0%) brightness(1);
+    }
+
+    .card h2 {
+      text-align: center;
+      padding: 15px;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      color: #d9d9d9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <header>
+    <h1>ALZZxBACK</h1>
+    <p>Dark Gothic Gallery</p>
+  </header>
+
+  <section class="gallery">
+
+    <div class="card">
+      <img src="foto1.jpg" alt="Foto 1">
+      <h2>DARK SHADOW</h2>
+    </div>
+
+    <div class="card">
+      <img src="foto2.jpg" alt="Foto 2">
+      <h2>NIGHT VIBES</h2>
+    </div>
+
+    <div class="card">
+      <img src="foto3.jpg" alt="Foto 3">
+      <h2>GOTHIC SOUL</h2>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 ALZZxBACK — Dark Vibe Edition
+  </footer>
+
+</body>
+  </html>
