@@ -113,6 +113,29 @@
 </head>
 <body>
 
+  <audio id="bgMusic" loop>
+    <source src="sound.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="loginBox" style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
+    <h1 style="margin-bottom:20px;font-size:2.5rem;">LOGIN GALLERY</h1>
+
+    <input id="username" type="text" placeholder="Username"
+      style="width:250px;padding:12px;margin:10px;border:none;border-radius:10px;background:#111;color:white;">
+
+    <input id="password" type="password" placeholder="Password"
+      style="width:250px;padding:12px;margin:10px;border:none;border-radius:10px;background:#111;color:white;">
+
+    <button onclick="loginGallery()"
+      style="padding:12px 30px;border:none;border-radius:10px;background:white;color:black;font-weight:bold;cursor:pointer;">
+      ENTER
+    </button>
+
+    <p style="margin-top:15px;color:#888;">Username: admin | Password: alzzxback</p>
+  </div>
+
+  <div id="galleryContent" style="display:none;">
+
   <div class="overlay"></div>
 
   <header>
@@ -143,5 +166,26 @@
     © 2026 ALZZxBACK — Dark Vibe Edition
   </footer>
 
+  </div>
+
+  <script>
+    const loginBox = document.getElementById('loginBox');
+    const gallery = document.getElementById('galleryContent');
+    const bgMusic = document.getElementById('bgMusic');
+
+    function loginGallery() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      if(user === 'admin' && pass === 'alzzxback') {
+        loginBox.style.display = 'none';
+        gallery.style.display = 'block';
+        bgMusic.play();
+      } else {
+        alert('Username atau Password salah!');
+      }
+    }
+  </script>
+
 </body>
-  </html>
+</html>
